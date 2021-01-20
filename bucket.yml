@@ -5,7 +5,7 @@ Resources:
 WebsiteBucket:
   Type: AWS::S3::Bucket
   Properties:
-    BucketName: !Sub "${NAME}"
+    BucketName: udacityweb90
     AccessControl: PublicRead
     WebsiteConfiguration:
       IndexDocument: index.html
