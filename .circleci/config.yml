@@ -9,7 +9,7 @@ jobs:
           aws cloudformation deploy \
             --template-file bucket.yml \
             --stack-name udacitystack \
-            --parameter-overrides NAME=udacitystack 
+            --parameter-overrides NAME="udacitystack"
       
   promote_to_production:
     docker:
