@@ -1,5 +1,11 @@
 ---
-# Update repositories and install "foo" and "bar" packages
-- apk:
-    name: node,npm
-    update_cache: yes
+- hosts: all
+  become: yes
+  tasks:
+  - name: Install packages
+    apt:
+      name:
+      - ntpdate
+      - nmap
+      state: latest
+      cache_valid_time: 3600
