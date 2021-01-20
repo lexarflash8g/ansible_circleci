@@ -7,10 +7,7 @@ jobs:
       - checkout
       - add_ssh_keys:
           fingerprints: ["36:ec:b4:fb:d9:f5:cd:bd:5b:72:97:5b:49:0b:0b:d7"]
-      - run:
-          name: Install dependencies
-          command: |
-            apt-get install ansible -y 
+      - run: sudo apt-get install ansible -y        
       - run:
           name: Configure server
           command: |
