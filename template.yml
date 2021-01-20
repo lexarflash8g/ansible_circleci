@@ -1,3 +1,5 @@
+Description: My build
+Resources:
   Ec2Instance:
     Type: 'AWS::EC2::Instance'
     Properties:
