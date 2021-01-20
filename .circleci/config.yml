@@ -6,7 +6,7 @@ jobs:
     steps:
       - checkout
       - run: |
-          aws cloudformation deploy --template-file bucket.yml --stack-name "mystack-${CIRCLE_WORKFLOW_ID:0:7}" --parameter-overrides PipelineID="${CIRCLE_WORKFLOW_ID:0:7}"
+          aws cloudformation deploy --template-file bucket.yml --stack-name "mystack-${CIRCLE_WORKFLOW_ID:0:7}" --parameter-overrides Name="${CIRCLE_WORKFLOW_ID:0:7}"
       
   promote_to_production:
     docker:
@@ -17,7 +17,7 @@ jobs:
           aws cloudformation deploy \
             --template-file cloudformation.yml \
             --stack-name cloudfront \
-            --parameter-overrides PipelineID="${CIRCLE_WORKFLOW_ID}"  
+            --parameter-overrides PipelineID="${CIRCLE_WORKFLOW_ID:0:7}"  
     
 
 
