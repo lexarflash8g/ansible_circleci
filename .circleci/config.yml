@@ -6,10 +6,7 @@ jobs:
     steps:
       - checkout
       - run: |
-          aws cloudformation deploy \
-            --template-file bucket.yml \
-            --stack-name udacitystack \
-            --parameter-overrides NAME="udacitystack"
+          aws cloudformation deploy --template-file bucket.yml --stack-name "mystack-${CIRCLE_WORKFLOW_ID:0:7}" --parameter-overrides PipelineID="${CIRCLE_WORKFLOW_ID:0:7}"
       
   promote_to_production:
     docker:
