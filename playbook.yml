@@ -1,9 +1,5 @@
-
-
+---
 # Update repositories and install "foo" and "bar" packages
 - apk:
     name: node,npm
     update_cache: yes
-
-
-
