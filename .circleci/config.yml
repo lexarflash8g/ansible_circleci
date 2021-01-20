@@ -1,4 +1,5 @@
 version: 2.1
+
 jobs:
   configure_infrastructure:
     docker:
@@ -15,7 +16,6 @@ jobs:
           name: Configure server
           command: |
             ansible-playbook -i inventory.txt playbook.yml
-
 workflows:
   my_workflow:
     jobs:
