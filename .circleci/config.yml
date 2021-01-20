@@ -19,10 +19,11 @@ jobs:
           name: Create Stack
           command: |
             aws cloudformation deploy \
-              --template-file template.yml \
-              --stack-name prod-${CIRCLE_WORKFLOW_ID}
-          name: List stack errors
-          when: on_fail
+            --template-file cloudfront.yml \
+            --stack-name production-distro \
+            --parameter-overrides PipelineID="${S3_BUCKET_NAME}" \ # Name of the S3 bucket you created manually.
+             --tags project=udapeople &
+         
 
 workflows:
   my_workflow:
